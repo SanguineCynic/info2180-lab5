@@ -5,10 +5,9 @@
 		<title>World Database Lookup</title>
 
 		<!-- you can modify this as needed or to your preference -->
-		<link href="world.css" type="text/css" rel="stylesheet" />
+		<link href="world.css" type="text/css" rel="stylesheet">
 
-		<!-- you write this -->
-		<script src="world.js" type="text/javascript"></script>
+
 	</head>
 
 	<body>
@@ -19,14 +18,16 @@
 		<main>
 			<div id="controls">
 				<label for="country">Country:</label>
-				<input id="country" type="search" name="country" placeholder="Enter country name" />
+				<input id="country" type="search" name="country" placeholder="Enter country name">
 				<button id="lookup">Lookup</button>
 			</div>
-			
+
 			<div id="result">
 				<!-- countries will appear here -->
 			</div>
 		</main>
 
+		<!-- you write this. Had an issue where the JS would not work unless put in the body. No clue why. -->
+		<script src="world.js" type="text/javascript"></script>
 	</body>
 </html>
