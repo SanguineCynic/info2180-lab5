@@ -6,7 +6,7 @@ search.addEventListener("click", function(e){
   e.preventDefault(); //stop reload
   var req = document.getElementById("country").value;
 
-  var url = "world.php?country=" + req;
+  var url = "world.php?country=" + req; 
 
   xhttp.onreadystatechange = function() {
     if (xhttp.readyState == XMLHttpRequest.DONE){
@@ -14,10 +14,38 @@ search.addEventListener("click", function(e){
          var res = xhttp.responseText;
          result.innerHTML = res;
 
-
-       }else{
+       }
+       else{
          alert("An error has occurred. Please try again.");
        }
+     }
+   }
+  xhttp.open("GET" , url, true);
+  xhttp.send();
+});
+
+
+//-------------------------------Cities Lookup-----------------------------//
+
+var citySearch = document.getElementById("cities");
+
+citySearch.addEventListener("click", function(e){
+  e.preventDefault();
+  var req = document.getElementById("country").value;
+
+  var url = "world.php?country=" + req + "&lookup=cities";
+
+  xhttp.onreadystatechange = function(){
+    if (xhttp.readyState == XMLHttpRequest.DONE){
+      if (xhttp.status == 200) {
+        var res = xhttp.responseText;
+        result.innerHTML = res;
+
+
+      }
+      else{
+        alert("An error has occurred. Please try again.");
+      }
     }
   }
   xhttp.open("GET" , url, true);
